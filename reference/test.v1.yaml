@@ -1,0 +1,93 @@
+openapi: 3.0.0
+info:
+  title: test
+  version: '1.0'
+servers:
+  - url: 'http://localhost:3000'
+paths:
+  /aa:
+    post:
+      summary: aab
+      tags: []
+      responses: {}
+      operationId: post-aa
+    get:
+      summary: aaa
+      tags: []
+      operationId: get-aa
+      description: fawefa
+      parameters:
+        - schema:
+            type: string
+          in: query
+          name: name
+          description: ''
+          required: true
+        - schema:
+            type: string
+          in: header
+          name: headername
+        - schema:
+            type: string
+          in: header
+      responses:
+        '200':
+          description: OK
+          headers:
+            header-0:
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+            examples:
+              example-1:
+                value: {}
+        description: 访问阿尔冯师傅访问法
+    put:
+      summary: aac
+      tags: []
+      responses: {}
+      operationId: put-aa
+    patch:
+      summary: ''
+      operationId: patch-aa
+      responses:
+        '200':
+          description: OK
+      description: ''
+    parameters:
+      - schema:
+          type: string
+        name: ''
+        in: path
+        required: true
+components:
+  schemas:
+    testModel:
+      title: testModel
+      type: object
+      properties:
+        id:
+          type: string
+  securitySchemes:
+    API Key - 2API Key - 1:
+      type: oauth2
+    API Key - 3:
+      type: http
+      scheme: basic
+    API Key - 4:
+      type: openIdConnect
+    API Key - 5:
+      name: API Key
+      type: apiKey
+      in: query
+security:
+  - API Key - 2API Key - 1: []
