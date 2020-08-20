@@ -74,9 +74,10 @@ components:
     testModel:
       title: testModel
       type: object
-      properties:
-        id:
-          type: string
+      x-examples:
+        example-1:
+          id: string
+          '': string
   securitySchemes:
     API Key - 2API Key - 1:
       type: oauth2
